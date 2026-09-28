@@ -99,6 +99,13 @@ public class WebDriverUtility {
 		wait.until(ExpectedConditions.titleContains(title));
 	}
 
+	public void waitTillElementContainsText(int timeInSec, WebElement ele, String text)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSec));
+		wait.until(ExpectedConditions.textToBePresentInElement(ele, text));
+	}
+	
+	
 	// 3. HANDLING FRAME AND WINDOWS
 	// 3.1 Handle Windows
 	// 3.1.1 HandleWindows By Title

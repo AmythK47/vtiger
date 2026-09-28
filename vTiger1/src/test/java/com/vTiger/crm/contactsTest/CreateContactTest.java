@@ -50,7 +50,7 @@ public class CreateContactTest extends BaseClass{
 		ThreadLocalClass.getTest().log(Status.INFO, "Created Contact");
 
 		// verify Contact name
-		String actName = cc.getVerifyName().getText();
+		String actName = cc.getVerifyContName().getText();
 		Assert.assertEquals(actName, contactName);
 		ThreadLocalClass.getTest().log(Status.INFO, "Contact Name Verified");
 	}
@@ -82,7 +82,7 @@ public class CreateContactTest extends BaseClass{
 		cc.getSaveBtn().click();
 
 		// verify Contact name
-		String actName = cc.getVerifyName().getText();
+		String actName = cc.getVerifyContName().getText();
 		String actDate = cc.getVerifyEndDate().getText();
 		ThreadLocalClass.getTest().log(Status.INFO, "Created Contact with End Date "+ actDate);
 		
@@ -135,7 +135,7 @@ public class CreateContactTest extends BaseClass{
 		ThreadLocalClass.getTest().log(Status.INFO, "Created Contact with Organization");
 
 		// verify Contact name		
-		String actName = cc.getVerifyName().getText();
+		String actName = cc.getVerifyContName().getText();
 		String actOrgName = cc.getVerifyOrgName().getText().trim();
 		SoftAssert sa = new SoftAssert();
 		sa.assertEquals(actName, contactName);

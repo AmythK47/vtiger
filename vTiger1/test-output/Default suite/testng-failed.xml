@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="listenerPractice.CreateContactListener">
+      <class name="com.vTiger.crm.opportunitiesTest.createOpportunitiesTest">
         <methods>
           <include name="configBC"/>
           <include name="configBS"/>
-          <include name="createOrgTest"/>
           <include name="configAC"/>
           <include name="configAS"/>
+          <include name="createOpportunityWithSalesStage"/>
           <include name="configBM"/>
           <include name="configAM"/>
         </methods>
-      </class> <!-- listenerPractice.CreateContactListener -->
+      </class> <!-- com.vTiger.crm.opportunitiesTest.createOpportunitiesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

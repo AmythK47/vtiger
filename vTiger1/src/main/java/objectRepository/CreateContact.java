@@ -46,7 +46,7 @@ public class CreateContact {
 	private WebElement saveBtn;
 	
 	@FindBy(id = "dtlview_Last Name")
-	private WebElement verifyName;
+	private WebElement verifyContName;
 	
 	@FindBy(id = "mouseArea_Organization Name")
 	private WebElement verifyOrgName;
@@ -82,8 +82,8 @@ public class CreateContact {
 		return saveBtn;
 	}
 
-	public WebElement getVerifyName() {
-		return verifyName;
+	public WebElement getVerifyContName() {
+		return verifyContName;
 	}
 
 	public WebElement getVerifyOrgName() {
@@ -94,6 +94,20 @@ public class CreateContact {
 		return verifyEndDate;
 	}
 	
+	//Business Utilities
+	
+	public void createContact(String contName)
+	{
+		HomePage h = new HomePage(driver);
+		h.getContactsLnk().click();
+		
+		ContactsPage c = new ContactsPage(driver);
+		c.getCreateContactBtn().click();
+		
+		contNameTF.sendKeys(contName);
+		saveBtn.click();
+	}
+	
 	public void orgNameselect(String orgName) throws Exception
 	{
 		orgNameSelector.click();
@@ -101,6 +115,7 @@ public class CreateContact {
 		wu.switchToWindow(driver, "http://49.249.29.4:8888/index.php?module=Accounts&action=Popup");
 		searchOrgTF.sendKeys(orgName);
 		searchBtn.click();
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.textToBePresentInElement(orgSelectLnk, orgName));
 		orgSelectLnk.click();

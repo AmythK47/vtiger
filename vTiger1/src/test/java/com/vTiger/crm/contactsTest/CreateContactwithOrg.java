@@ -75,7 +75,7 @@ public class CreateContactwithOrg {
 		System.out.println("Contact Name : " + contactName);
 		
 		//verify Contact name
-		if(cc.getVerifyName().getText().equals(contactName))
+		if(cc.getVerifyContName().getText().equals(contactName))
 			System.out.println(contactName + " -- Contact Name verified ===> PASS");
 		else
 			System.out.println(contactName + " -- Contact Name Not verified ===> FAIL");

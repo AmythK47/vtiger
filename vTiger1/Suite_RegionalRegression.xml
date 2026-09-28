@@ -8,17 +8,22 @@
 
 
   <test thread-count="5" name="Test">
+  
     <classes>
+    
       <class name="com.vTiger.crm.contactsTest.CreateContactTest">
-      <methods>
-      	<include name="createContactTest"></include> 
-      </methods>
+	      <methods>
+	      		<include name="createContactTest"></include> 
+	      </methods>
       </class>
+      
       <class name="com.vTiger.crm.organizationTest.CreateOrganizationTest">
-      <methods>
-      	<include name="createOrgTest"></include>
-      </methods>
+	      <methods>
+	      		<include name="createOrgTest"></include>
+	      </methods>
       </class>
+      
     </classes>
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->

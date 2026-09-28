@@ -9,6 +9,8 @@
     <classes>
       <class name="com.vTiger.crm.contactsTest.CreateContactTest"/>
       <class name="com.vTiger.crm.organizationTest.CreateOrganizationTest"/>
+      <class name="com.vTiger.crm.opportunitiesTest.createOpportunitiesTest"/>
+      <class name="com.vTiger.crm.leadsTest.CreateLeadsTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

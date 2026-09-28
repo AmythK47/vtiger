@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateOrganization {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public CreateOrganization(WebDriver driver)
 	{
@@ -64,6 +64,17 @@ public class CreateOrganization {
 		return phoneNumberTF;
 	}
 	
-	
+	//create Organization
+	public void createOrg(String orgName)
+	{
+		HomePage h = new HomePage(driver);
+		h.getOrganizationsLnk().click();
+		
+		OrganizationsPage o = new OrganizationsPage(driver);
+		o.getCreateOrgBtn().click();
+		
+		OrgNameTF.sendKeys(orgName);
+		saveBtn.click();
+	}
 	
 }

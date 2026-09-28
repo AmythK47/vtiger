@@ -1,12 +1,9 @@
 package listenerUtil;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -19,14 +16,13 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import baseTest.BaseClass;
 import threadLocalClass.ThreadLocalClass;
 
 public class ListenerImplementation implements ITestListener , ISuiteListener
 {
 	public ExtentSparkReporter spark;
 	public ExtentReports report;
-	public static ExtentTest test;
+	public ExtentTest test;
 	
 	@Override
 	public void onStart(ISuite suite)
@@ -71,7 +67,7 @@ public class ListenerImplementation implements ITestListener , ISuiteListener
 		String name = res.getMethod().getMethodName();
 		String time = new Date().toString().replace(" ", "_").replace(":", "_");
 		
-		TakesScreenshot tks = (TakesScreenshot)BaseClass.sdriver;
+		TakesScreenshot tks = (TakesScreenshot)ThreadLocalClass.getDriver();
 		String filepath = tks.getScreenshotAs(OutputType.BASE64);
 		
 		test.addScreenCaptureFromBase64String(filepath , name+"_"+time);
